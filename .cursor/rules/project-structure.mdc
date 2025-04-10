@@ -1,0 +1,82 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+{
+  "project_name": "Cooking Blog",
+  "framework": "Next.js",
+  "language": "TypeScript",
+  "styling": "Tailwind CSS",
+  "structure": {
+    "app": {
+      "description": "Main application directory using Next.js App Router",
+      "files": {
+        "page.tsx": "Main landing page component",
+        "layout.tsx": "Root layout component with metadata and providers",
+        "globals.css": "Global styles and Tailwind imports",
+        "not-found.tsx": "404 page component",
+        "ricette": {
+          "description": "Recipes section of the blog"
+        }
+      }
+    },
+    "components": {
+      "description": "Reusable React components",
+      "files": {
+        "category-filter.tsx": "Component for filtering recipes by category",
+        "recipe-content.tsx": "Component for displaying recipe content",
+        "share-buttons.tsx": "Social media sharing buttons component",
+        "site-footer.tsx": "Website footer component",
+        "site-header.tsx": "Website header with navigation",
+        "theme-provider.tsx": "Theme context provider",
+        "theme-toggle.tsx": "Dark/light mode toggle component",
+        "ui": {
+          "description": "UI components directory"
+        }
+      }
+    },
+    "config": {
+      "description": "Configuration files and settings"
+    },
+    "content": {
+      "description": "Content management directory"
+    },
+    "hooks": {
+      "description": "Custom React hooks"
+    },
+    "lib": {
+      "description": "Utility functions and shared code"
+    },
+    "public": {
+      "description": "Static assets directory"
+    },
+    "styles": {
+      "description": "CSS and styling files"
+    },
+    "configuration_files": {
+      "package.json": "Project dependencies and scripts",
+      "tsconfig.json": "TypeScript configuration",
+      "next.config.mjs": "Next.js configuration",
+      "tailwind.config.ts": "Tailwind CSS configuration",
+      "postcss.config.mjs": "PostCSS configuration",
+      "components.json": "UI components configuration"
+    }
+  },
+  "key_features": [
+    "Next.js App Router",
+    "TypeScript",
+    "Tailwind CSS",
+    "Dark/Light theme support",
+    "Recipe management system",
+    "Category filtering",
+    "Social sharing functionality"
+  ],
+  "dependencies": {
+    "framework": "Next.js",
+    "styling": "Tailwind CSS",
+    "ui_components": "shadcn/ui",
+    "state_management": "React Context",
+    "build_tool": "pnpm"
+  }
+} 
