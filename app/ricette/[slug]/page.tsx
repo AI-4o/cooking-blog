@@ -42,6 +42,8 @@ export async function generateStaticParams() {
   }))
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function RecipePage({ params }: RecipePageProps) {
   const { slug } = await params;
   const recipe = await getRecipeBySlug(slug)
@@ -49,6 +51,9 @@ export default async function RecipePage({ params }: RecipePageProps) {
   if (!recipe) {
     notFound()
   }
+
+  // Extract the MDX content and serialize it for client-side consumption
+  const serializedContent = recipe.content;
 
   return (
     <div className="container mx-auto px-4 py-12">
@@ -108,7 +113,7 @@ export default async function RecipePage({ params }: RecipePageProps) {
             </div>
             
             <div className="prose prose-stone dark:prose-invert max-w-none">
-              <MDXContent content={recipe.content} />
+              <MDXContent content={serializedContent} />
             </div>
 
             <RecipeInteractions />

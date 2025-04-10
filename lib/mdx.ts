@@ -90,6 +90,7 @@ export async function getRecipeBySlug(slug: string) {
   // Use gray-matter to parse the post metadata section
   const { content, data } = matter(fileContents)
 
+  // Serialize MDX content for client-side rendering
   const mdxSource = await serialize(content, {
     mdxOptions: {
       rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }], rehypePrism],

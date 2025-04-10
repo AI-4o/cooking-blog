@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { MDXRemote } from "next-mdx-remote"
 
@@ -34,14 +35,34 @@ interface MDXContentProps {
 }
 
 export function MDXContent({ content }: MDXContentProps) {
+  const [mounted, setMounted] = useState(false)
+
+  // Only render the MDXRemote component on the client side
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   // If content is null or undefined, show an error message
   if (!content) {
-    return <div className="p-4 bg-red-100 text-red-800 rounded">MDX content is missing</div>;
+    return <div className="p-4 bg-red-100 text-red-800 rounded">MDX content is missing</div>
   }
-  
+
   return (
     <div className="mdx-content">
-     <MDXRemote {...content} components={components} />
+      {!mounted ? (
+        // Skeleton loader while client component mounts
+        <div className="animate-pulse">
+          <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
+          <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+          <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+          <div className="h-4 bg-gray-200 rounded w-5/6 mb-4"></div>
+          <div className="h-6 bg-gray-200 rounded w-2/4 mb-4 mt-6"></div>
+          <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+          <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+        </div>
+      ) : (
+        <MDXRemote {...content} components={components} />
+      )}
     </div>
-  );
+  )
 } 
