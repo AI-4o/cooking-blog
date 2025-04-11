@@ -1,0 +1,15 @@
+{
+  "name": "cucina-deliziosa",
+  "short_name": "cd",
+  "theme_color": "#d68227",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "any",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    { "src": "/manifest-icons/cucina-ita-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/manifest-icons/cucina-ita-256.png", "type": "image/png", "sizes": "256x256" },
+    { "src": "/manifest-icons/cucina-ita-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable" }
+  ]
+}

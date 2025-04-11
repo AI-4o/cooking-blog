@@ -1,6 +1,7 @@
 {
-  "name": "my-v0-project",
+  "name": "cucina-deliziosa",
   "version": "0.1.0",
+  "author": "chef gustavo bene",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -53,6 +54,7 @@
     "lucide-react": "^0.454.0",
     "next": "15.2.4",
     "next-mdx-remote": "latest",
+    "next-pwa": "^5.6.0",
     "next-themes": "^0.4.6",
     "path": "latest",
     "react": "^19",

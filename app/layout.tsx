@@ -19,11 +19,11 @@ export const metadata = {
   keywords: ["cucina italiana", "ricette", "cibo", "blog di cucina"],
   authors: [
     {
-      name: "Cucina Deliziosa",
+      name: "Chef Gustavo Bene",
       url: "https://cucina-deliziosa.vercel.app",
     },
   ],
-  creator: "Cucina Deliziosa",
+  creator: "Chef Gustavo Bene",
   openGraph: {
     type: "website",
     locale: "it_IT",
@@ -43,8 +43,8 @@ export const metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  manifest: "https://cucina-deliziosa.vercel.app/site.webmanifest",
-    generator: 'v0.dev'
+  manifest: "/manifest.json",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
