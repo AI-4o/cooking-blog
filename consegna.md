@@ -1,3 +1,3 @@
-# ESERCITAZIONE 
+ESERCITAZIONE 
 
-Creare un'app nextjs che sia un blog e conservi gli articoli in files .md. Attenzionare la SEO e la gestione dei files statici.
+Trasformare l'app del blog con markdown sviluppata nelle precedenti esercitazioni in una PWA.
