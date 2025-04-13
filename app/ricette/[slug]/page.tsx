@@ -35,6 +35,7 @@ export async function generateStaticParams() {
   }))
 }
 
+
 export default async function RecipePage({ params }: any) {
   const { slug } = await params;
   const recipe = await getRecipeBySlug(slug);
