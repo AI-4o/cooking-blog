@@ -10,10 +10,9 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { RecipeInteractions } from "@/components/recipe-interactions"
 import { MDXContent } from "@/components/mdx-content"
-import { RecipeParams } from "@/app/types/next"
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const slug = params.slug;
+  const { slug } = await params;
   const recipe = await getRecipeBySlug(slug);
 
   if (!recipe) {
@@ -36,11 +35,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export const dynamic = 'force-dynamic';
-
-// Use minimal typing to avoid TypeScript errors
 export default async function RecipePage({ params }: any) {
-  const slug = params.slug;
+  const { slug } = await params;
   const recipe = await getRecipeBySlug(slug);
 
   if (!recipe) {

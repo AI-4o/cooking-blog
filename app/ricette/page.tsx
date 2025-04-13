@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   },
 };
 
+// Assicura il rendering statico (equivalente a getStaticProps)
+export const dynamic = "force-static";
+// Oppure, se desideri aggiornamenti periodici:
+// export const revalidate = 3600;
+
 export default async function RecipesPage() {
   const recipes = await getAllRecipes();
-
-  // Extract all unique categories
-  const allCategories = Array.from(
-    new Set(recipes.flatMap((recipe) => recipe.frontmatter.categories || []))
-  );
 
   return (
     <div className="container mx-auto px-4 py-12">
