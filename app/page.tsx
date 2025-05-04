@@ -1,15 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-
 import { getAllRecipes } from "@/lib/mdx"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import PwaInstallation from "@/components/pwa-installation"
+
 
 export const metadata = {
   title: "Cucina Deliziosa | Ricette e consigli culinari",
   description: "Un blog di cucina italiana con ricette tradizionali e innovative",
+  manifest: "/manifest.json", // add manifest to all pages
   keywords: ["cucina italiana", "ricette", "cibo", "blog di cucina"],
   openGraph: {
     title: "Cucina Deliziosa | Ricette e consigli culinari",
@@ -51,19 +53,20 @@ export default async function Home() {
             <p className="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl">
               Scopri il gusto autentico della cucina italiana con le nostre ricette tradizionali e creative
             </p>
-            <div>
+            <div className="flex gap-4">
               <Button size="lg" asChild>
                 <Link href="/ricette">
                   Esplora le ricette <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
+              <PwaInstallation />
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Featured Recipes */}
-      <section className="mb-16">
+      < section className="mb-16" >
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold">Ricette in evidenza</h2>
           <Link href="/ricette" className="text-primary hover:underline">
@@ -102,10 +105,10 @@ export default async function Home() {
             </Card>
           ))}
         </div>
-      </section>
+      </section >
 
       {/* Recent Recipes */}
-      <section>
+      < section >
         <h2 className="text-3xl font-bold mb-8">Ultime ricette</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {recentRecipes.map((recipe) => (
@@ -129,7 +132,7 @@ export default async function Home() {
             </Link>
           ))}
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   )
 }
