@@ -15,7 +15,6 @@ export default withPWA({
   disable: process.env.NODE_ENV === "development",        // disable PWA in the development environment
   register: true,         // register the PWA service worker
   skipWaiting: true,      // skip waiting for service worker activation
-  swcMinify: true,
   runtimeCaching: [ // each element is a caching strategy for different content 
     {
       urlPattern: /^https:\/\/your-api-domain\.com\/api/, //  Defines which URLs the caching rule applies to, can use callbacks or regex
@@ -38,7 +37,4 @@ export default withPWA({
     },
     // Add more route-specific caching strategies
   ],
-  workboxOptions: {
-    disableDevLogs: true,
-  }
 })(nextConfig);
